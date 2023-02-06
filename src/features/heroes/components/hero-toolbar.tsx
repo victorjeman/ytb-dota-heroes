@@ -6,11 +6,10 @@ import { HeroFilterByComplexity } from './hero-filter-by-complexity'
 import { HeroSearch } from './hero-search'
 
 interface HeroToolbarProps {
-	setHeroAttr: SetHeroAttr
-	setHeroFilter: SetHeroFilter
+	children: React.ReactNode
 }
 
-export const HeroToolbar = ({ setHeroAttr, setHeroFilter }: HeroToolbarProps) => {
+export const HeroToolbar = ({ children }: HeroToolbarProps) => {
 	return (
 		<Paper shadow='lg' p='lg' mb='xl' mt='xl' withBorder>
 			<Flex
@@ -22,11 +21,7 @@ export const HeroToolbar = ({ setHeroAttr, setHeroFilter }: HeroToolbarProps) =>
 					Filter Heroes
 				</Text>
 
-				<HeroFilterByAttribute setHeroAttr={setHeroAttr} />
-
-				<HeroFilterByComplexity />
-
-				<HeroSearch setHeroFilter={setHeroFilter} />
+				{children}
 			</Flex>
 		</Paper>
 	)

@@ -5,10 +5,9 @@ import { HeroThumbnail } from './hero-thumbnail'
 
 interface HeroListProps {
 	heroes: Hero[]
-	filter: string
 }
 
-export const HeroList = ({ heroes, filter }: HeroListProps) => {
+export const HeroList = ({ heroes }: HeroListProps) => {
 	return (
 		<Paper shadow='xs' p='md' mb='lg'>
 			<SimpleGrid
