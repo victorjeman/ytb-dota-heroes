@@ -1,0 +1,29 @@
+{
+	"name": "ytb-dota-heroes",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc && vite build",
+		"preview": "vite preview",
+		"db": "json-server --watch db.json"
+	},
+	"dependencies": {
+		"@emotion/react": "^11.10.5",
+		"@mantine/core": "^5.10.3",
+		"@mantine/hooks": "^5.10.3",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"swr": "^2.0.3"
+	},
+	"devDependencies": {
+		"@types/react": "^18.0.27",
+		"@types/react-dom": "^18.0.10",
+		"@vitejs/plugin-react-swc": "^3.0.0",
+		"prettier": "^2.8.3",
+		"typescript": "^4.9.3",
+		"vite": "^4.1.0",
+		"vite-plugin-fonts": "^0.7.0"
+	}
+}
