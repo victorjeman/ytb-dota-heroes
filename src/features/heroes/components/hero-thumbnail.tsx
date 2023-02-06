@@ -1,4 +1,4 @@
-import { Box, Text, AspectRatio, Image, createStyles, Flex } from '@mantine/core'
+import { Box, Text, Image, createStyles, Flex } from '@mantine/core'
 
 import { Hero } from '../types/hero.types'
 
@@ -9,14 +9,12 @@ interface HeroThumbnailProps {
 export const HeroThumbnail = ({ hero }: HeroThumbnailProps) => {
 	const { classes } = useStyles()
 
+	const heroImgSrc = `/images/heroes/${hero.name_loc.toLocaleLowerCase().replace(/\ /g, '_')}.png`
+	const heroAttrImgSrc = `/images/icons/attr_${hero.primary_attr}.png`
+
 	return (
 		<Box className={classes.box}>
-			<Image
-				width='225'
-				className={classes.image}
-				src={`/images/heroes/${hero.name_loc.toLocaleLowerCase().replace(/\ /g, '_')}.png`}
-				alt={hero.name_loc}
-			/>
+			<Image width='225' className={classes.image} src={heroImgSrc} alt={hero.name_loc} />
 
 			<Text className={classes.text} sx={{ lineHeight: '1' }}>
 				<Flex justify='start' align='center'>
@@ -26,7 +24,7 @@ export const HeroThumbnail = ({ hero }: HeroThumbnailProps) => {
 							marginRight: '0.5rem',
 							display: 'inline-block',
 						}}>
-						<Image m='0' src={`/images/icons/attr_${hero.primary_attr}.png`} alt={`${hero.primary_attr}`} />
+						<Image m='0' src={heroAttrImgSrc} alt={`${hero.primary_attr}`} />
 					</Box>
 
 					<span>{hero.name_loc}</span>
