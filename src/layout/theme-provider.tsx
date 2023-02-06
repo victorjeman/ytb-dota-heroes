@@ -12,6 +12,11 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
 	return (
 		<MantineProvider
 			theme={{
+				globalStyles: (theme) => ({
+					body: {
+						overflow: 'scroll',
+					},
+				}),
 				fontFamily: 'Merriweather',
 				headings: { fontFamily: 'Merriweather' },
 				colorScheme: 'dark',

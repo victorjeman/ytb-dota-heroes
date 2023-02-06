@@ -1,20 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { MantineProvider } from '@mantine/core'
 
 import App from './app'
+import { ThemeProvider } from './layout/theme-provider'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 	<React.StrictMode>
-		<MantineProvider
-			theme={{
-				fontFamily: 'Merriweather',
-				headings: { fontFamily: 'Merriweather' },
-				colorScheme: 'dark',
-			}}
-			withGlobalStyles
-			withNormalizeCSS>
+		<ThemeProvider>
 			<App />
-		</MantineProvider>
+		</ThemeProvider>
 	</React.StrictMode>,
 )

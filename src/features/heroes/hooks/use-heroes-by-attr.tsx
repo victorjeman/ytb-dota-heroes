@@ -3,17 +3,13 @@ import { useMemo, useState } from 'react'
 import { Hero, HeroAttr } from '../types/hero.types'
 
 export const useHeroesByAttr = (heroes: Hero[]) => {
-	const [heroAttr, setHeroAttr] = useState<HeroAttr>('all')
+	const [heroAttr, setHeroAttr] = useState<HeroAttr | ''>('')
 
-	const heroesByAttr = useMemo(
-		() => ({
-			all: heroes,
-			str: heroes?.filter((hero: Hero) => hero.primary_attr === 0),
-			agi: heroes?.filter((hero: Hero) => hero.primary_attr === 1),
-			int: heroes?.filter((hero: Hero) => hero.primary_attr === 2),
-		}),
-		[heroes],
-	)
+	const heroesByAttr = useMemo(() => {
+		if (heroAttr === '') return heroes
 
-	return { heroesByAttr: heroesByAttr[heroAttr], setHeroAttr }
+		return heroes.filter((hero) => hero.primary_attr === Number(heroAttr))
+	}, [heroes, heroAttr])
+
+	return { heroesByAttr, setHeroAttr }
 }

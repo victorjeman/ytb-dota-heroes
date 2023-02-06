@@ -7,7 +7,7 @@ export interface Hero {
 	complexity: 1 | 2 | 3
 }
 
-export type HeroAttr = 'all' | 'str' | 'int' | 'agi'
+export type HeroAttr = '0' | '1' | '2'
 
 export type SetHeroAttr = (value: HeroAttr) => void
 export type SetHeroFilter = (value: string) => void
