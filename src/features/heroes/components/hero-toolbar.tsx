@@ -1,10 +1,5 @@
 import { Paper, Flex, Text } from '@mantine/core'
 
-import { SetHeroAttr, SetHeroFilter } from '../types/hero.types'
-import { HeroFilterByAttribute } from './hero-filter-by-attribute'
-import { HeroFilterByComplexity } from './hero-filter-by-complexity'
-import { HeroSearch } from './hero-search'
-
 interface HeroToolbarProps {
 	children: React.ReactNode
 }
