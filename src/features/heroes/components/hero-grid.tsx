@@ -15,29 +15,19 @@ import { HeroSearch } from './hero-search'
 import { HeroToolbar } from './hero-toolbar'
 
 export const HeroGrid = () => {
-	const { data } = useSWR(HEROES_API, getHeroesAPI)
-
-	const { filteredHeroes, heroFilter, setHeroFilter } = useFilteredHeroes(data)
-	const { heroesByAttr, setHeroAttr } = useHeroesByAttr(data)
-
-	const heroes = heroFilter ? filteredHeroes : heroesByAttr
-
 	return (
 		<Container size='xl'>
 			<HeroToolbar>
-				<HeroFilterByAttribute setHeroAttr={setHeroAttr} />
+				<HeroFilterByAttribute />
 
 				<HeroFilterByComplexity />
 
-				<HeroSearch setHeroFilter={setHeroFilter} />
+				<HeroSearch />
 			</HeroToolbar>
 
-			<HeroIntro
-				title='Chose your hero'
-				subtitle="From magical tacticians to fierce brutes and cunning rogues, Dota 2's hero pool is massive and limitlessly diverse. Unleash incredible abilities and devastating ultimates on your way to victory."
-			/>
+			<HeroIntro />
 
-			<HeroList heroes={heroes} />
+			<HeroList />
 		</Container>
 	)
 }
