@@ -24,6 +24,11 @@ export const HeroGrid = () => {
 
 	return (
 		<Container size='xl'>
+			<HeroIntro
+				title='Chose your hero'
+				subtitle="From magical tacticians to fierce brutes and cunning rogues, Dota 2's hero pool is massive and limitlessly diverse. Unleash incredible abilities and devastating ultimates on your way to victory."
+			/>
+
 			<HeroToolbar>
 				<HeroFilterByAttribute setHeroAttr={setHeroAttr} />
 
@@ -31,11 +36,6 @@ export const HeroGrid = () => {
 
 				<HeroSearch setHeroFilter={setHeroFilter} />
 			</HeroToolbar>
-
-			<HeroIntro
-				title='Chose your hero'
-				subtitle="From magical tacticians to fierce brutes and cunning rogues, Dota 2's hero pool is massive and limitlessly diverse. Unleash incredible abilities and devastating ultimates on your way to victory."
-			/>
 
 			<HeroList heroes={heroes} />
 		</Container>

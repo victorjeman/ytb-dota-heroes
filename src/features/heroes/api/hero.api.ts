@@ -1,6 +1,5 @@
 export const getHeroesAPI = async (url: string) => {
-	const data = await window.fetch(url)
-	const heroes = await data.json()
-
-	return heroes
+	const response = await window.fetch(url)
+	const data = await response.json()
+	return data
 }

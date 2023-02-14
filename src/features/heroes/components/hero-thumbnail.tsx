@@ -16,16 +16,9 @@ export const HeroThumbnail = ({ hero }: HeroThumbnailProps) => {
 		<Box className={classes.box}>
 			<Image width='225' className={classes.image} src={heroImgSrc} alt={hero.name_loc} />
 
-			<Text className={classes.text} sx={{ lineHeight: '1' }}>
-				<Flex justify='start' align='center'>
-					<Box
-						sx={{
-							width: 30,
-							marginRight: '0.5rem',
-							display: 'inline-block',
-						}}>
-						<Image m='0' src={heroAttrImgSrc} alt={`${hero.primary_attr}`} />
-					</Box>
+			<Text className={classes.text}>
+				<Flex justify='start' align='center' p='sm'>
+					<Image src={heroAttrImgSrc} alt={`${hero.primary_attr}`} width={30} mr='sm' />
 
 					<span>{hero.name_loc}</span>
 				</Flex>
@@ -60,6 +53,7 @@ const useStyles = createStyles((theme, params, getRef) => ({
 		ref: getRef('text'),
 		background: 'linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.733) 75%, rgb(0, 0, 0) 100%)',
 		color: 'white',
+		lineHeight: 1,
 		fontSize: '1.2rem',
 		padding: '0.4rem',
 		opacity: 0,
